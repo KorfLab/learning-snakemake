@@ -1,1 +1,4 @@
-# learning-snakemake
+Learning Snakemake
+==================
+
+Assumed: Unix, Python, Conda
