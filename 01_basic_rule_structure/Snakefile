@@ -1,0 +1,18 @@
+# Run using `snakemake -j 1`
+
+# Snakemake always runs only the first rule unless a rule name is given at the command line
+# Convention is to call the first rule "rule all" so it generates the last output
+rule all:
+	input: "hello_world_head.txt"
+
+# Write a rule
+rule hello_world:
+	#input: no input for this one
+	output: "hello_world.txt"
+	shell: "echo 'Hello World!' > {output}"
+	
+# Write a second rule
+rule hello_world_2:
+	input: "hello_world.txt"
+	output: "hello_world_head.txt"
+	shell: "head {input} > {output}"
