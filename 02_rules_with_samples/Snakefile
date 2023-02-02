@@ -1,0 +1,13 @@
+SAMPLES = ["samp1", "samp2", "samp3"]
+
+# You need to tell Snakemake which samples you are using as your wildcards
+rule gen_text:
+	input: expand("{sample}.txt", sample=SAMPLES)
+
+# This is the rule in which a process is being carried out
+# The rule above just serves to fill in {sample}	
+rule gen_text_wc:
+	output: "{sample}.txt"
+	shell: "touch {output}"
+	
+	
